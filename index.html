@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Freitas - Desenvolvedor</title>
+    <!-- Importação do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importação das fontes -->
+    <style>
+        @font-face {
+            font-family: 'Andarion';
+            src: url('./src/fonts/Andarion-Font.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'VT323';
+            src: url('./src/fonts/VT323-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'PublicSans';
+            src: url('./src/fonts/PublicSans-Medium.ttf') format('truetype');
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(18px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+    </style>
+    <!-- Configuração customizada do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-blue': '#6064FF',
+                        'custom-bg': '#111111',
+                        'custom-grey': '#cccccc'
+                    },
+                    fontFamily: {
+                        'andarion': ['Andarion', 'sans-serif'],
+                        'vt323': ['VT323', 'monospace'],
+                        'public-sans': ['PublicSans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-custom-bg min-h-screen text-white">
+    <!-- Header -->
+    <header class="container mx-auto px-96 py-8 flex justify-between items-center">
+        <!-- Links do lado esquerdo -->
+        <div class="flex space-x-16">
+            <a href="#" class="text-custom-grey text-sm font-public-sans hover:text-white transition-colors">GitHub</a>
+            <a href="#" class="text-custom-grey text-sm font-public-sans hover:text-white transition-colors">LinkedIn</a>
+        </div>
+        
+        <!-- Logo no centro -->
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <span class="font-andarion text-3xl text-custom-blue">X</span>
+        </div>
+        
+        <!-- Links do lado direito -->
+        <div class="flex space-x-16">
+            <a href="#" class="text-custom-grey text-sm font-public-sans hover:text-white transition-colors">Instagram</a>
+            <a href="#" class="text-custom-grey text-sm font-public-sans hover:text-custom-blue transition-colors">Alunos</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-4 mt-12 flex flex-col items-center">
+        <!-- Ícones de mídia social -->
+        <!-- <div class="flex gap-6 mb-4">
+            <a href="#" class="w-4 h-4 opacity-50 hover:opacity-100 transition-all duration-300">
+                <img src="./src/img/github.svg" alt="GitHub" class="w-full h-full">
+            </a>
+            <a href="#" class="w-4 h-4 opacity-50 hover:opacity-100 transition-all duration-300">
+                <img src="./src/img/linkedin.svg" alt="LinkedIn" class="w-full h-full">
+            </a>
+            <a href="#" class="w-4 h-4 opacity-50 hover:opacity-100 transition-all duration-300">
+                <img src="./src/img/instagram.svg" alt="Instagram" class="w-full h-full">
+            </a>
+        </div> -->
+
+        <!-- Lado Esquerdo -->
+        <div class="max-w-3xl text-center">
+            <h1 class="font-vt323 text-4xl mb-6" style="letter-spacing: 0.2em; text-align: center;">
+                PAULO <span class="text-custom-blue">FREITAS</span>
+            </h1>
+            <p class="font-public-sans text-custom-grey mb-12 text-center text-sm leading-relaxed" style="width: 492px;">
+                Ensinando programação e desenvolvimento de software com criatividade e paixão para formar profissionais inovadores, que saibam transformar suas ideias em projetos digitais reais. As aulas de programação serão em forma de transmissões ao vivo e gravações exclusivas.
+            </p>
+
+            <span class="font-vt323 text-2xl text-white text-center"  style="letter-spacing: 0.2em; text-align: center;" >CARREIRAS</span>
+            
+            <!-- Ícones quadrados -->
+            <div class="flex justify-center gap-8 mt-6" style="width: 500px;">
+                <div class="w-28 h-20 border-4 border-custom-blue flex items-center justify-center opacity-30 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-[0px_7px_29px_0px_#6064FF]" data-card="code">
+                    <img src="./src/img/tag.svg" alt="Código" class="w-10 h-10 text-white">
+                </div>
+                <div class="w-28 h-20 border-4 border-custom-blue flex items-center justify-center opacity-30 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-[0px_7px_29px_0px_#6064FF]" data-card="game">
+                    <img src="./src/img/control.svg" alt="Games" class="w-10 h-10">
+                </div>
+            </div>
+        </div>
+        <!-- Lado Direito - Cards -->
+        <div class="w-[580px] relative mt-28 mb-28">
+            <!-- Card Desenvolvimento -->
+            <div id="code-card" class="absolute -top-20 right-0 w-full opacity-0 transition-all duration-300 hidden floating">
+                <div class="relative transition-shadow duration-300">
+                    <div class="bg-[#111111] p-12 relative h-[380px] border-4 border-custom-blue">
+                        <!-- Ícone no topo -->
+                        <div class="absolute top-8 left-1/2 transform -translate-x-1/2">
+                            <img src="./src/img/tag.svg" alt="Código" class="w-8 h-8 text-custom-blue">
+                        </div>
+                        
+                        <!-- Conteúdo -->
+                        <div class="mt-8">
+                            <h3 class="text-white font-vt323 text-2xl mb-6 text-center" style="letter-spacing: 0.1em; text-align: center;" >
+                                PROGRAMADOR WEB COMPLETO
+                            </h3>
+                            <p class="text-custom-grey font-public-sans text-sm mb-6 text-center">
+                                Domine o desenvolvimento web full stack e aprenda a criar sites e aplicativos completos, desde a interface visual até a estrutura lógica por trás do sistema. Com uma abordagem prática, você dominará as principais tecnologias de front-end e back-end, mesmo sem experiência prévia.
+                            </p>
+                            <p class="text-custom-grey font-public-sans text-sm mb-8 text-center">
+                                Seja capaz de desenvolver projetos modernos e funcionais, integrando design responsivo e bancos de dados eficientes. Prepare-se para se destacar no mercado, transformando ideias em soluções digitais reais.
+                            </p>
+                            
+                            <!-- Botão -->
+                            <!-- <button class="w-full bg-custom-blue text-white font-public-sans py-2 hover:bg-opacity-80 transition-all duration-300 mb-8">
+                                SAIBA MAIS
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Games -->
+            <div id="game-card" class="absolute -top-20 right-0 w-full opacity-0 transition-all duration-300 hidden floating">
+                <div class="relative transition-shadow duration-300">
+                    <div class="bg-[#060611] p-12 relative h-[380px] border-4 border-custom-blue">
+                        <!-- Ícone no topo -->
+                        <div class="absolute top-8 left-1/2 transform -translate-x-1/2">
+                            <img src="./src/img/control.svg" alt="Games" class="w-8 h-8 text-custom-blue">
+                        </div>
+                        
+                        <!-- Conteúdo -->
+                        <div class="mt-8">
+                            <h3 class="text-white font-vt323 text-2xl mb-6 text-center" style="letter-spacing: 0.1em; text-align: center;">
+                                PROGRAMADOR DE GAMES
+                            </h3> 
+                            <p class="text-custom-grey font-public-sans text-sm mb-6 text-center">
+                                Aprenda a desenvolver seus próprios jogos do zero, transformando suas ideias em experiências interativas. Com uma abordagem prática, você aprenderá desde os fundamentos até a programação de mecânicas complexas, mesmo sem experiência prévia.
+                            </p>
+                            <p class="text-custom-grey font-public-sans text-sm mb-8 text-center">
+                                Seja capaz de criar projetos de gêneros variados, explorando sua criatividade e expandindo suas habilidades de programação. Prepare-se para se destacar no mundo do desenvolvimento de games, transformando paixão em jogos.
+                            </p>
+                            
+                            <!-- Botão -->
+                            <!-- <button class="w-full bg-custom-blue text-white text-1xl font-public-sans py-2 hover:bg-opacity-80 transition-all duration-300 mb-8">
+                                SAIBA MAIS
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="display: block; height: 200px; margin-bottom: 100px;">
+            
+        </p>
+
+        <p class="mt-10 text-center text-sm">
+            
+        </p>
+    </main>
+
+    <script>
+        const cards = {
+            code: document.getElementById('code-card'),
+            ia: document.getElementById('ia-card'),
+            game: document.getElementById('game-card')
+        };
+
+        // Função para mostrar um card
+        function showCard(cardId) {
+            // Remove efeitos de todos os ícones
+            document.querySelectorAll('[data-card]').forEach(icon => {
+                icon.classList.remove('opacity-100');
+                icon.classList.remove('shadow-[0px_7px_29px_0px_#6064FF]');
+                icon.classList.add('opacity-30');
+            });
+
+            // Adiciona efeitos ao ícone selecionado
+            const selectedIcon = document.querySelector(`[data-card="${cardId}"]`);
+            selectedIcon.classList.remove('opacity-30');
+            selectedIcon.classList.add('opacity-100');
+            selectedIcon.classList.add('shadow-[0px_7px_29px_0px_#6064FF]');
+
+            // Esconde todos os cards e remove shadow
+            Object.values(cards).forEach(card => {
+                if (card) {
+                    card.classList.add('hidden');
+                    card.classList.add('opacity-0');
+                    card.querySelector('div').classList.remove('shadow-[0px_7px_29px_0px_#6064FF]');
+                }
+            });
+
+            // Mostra o card correspondente e adiciona shadow
+            const cardToShow = cards[cardId];
+            if (cardToShow) {
+                cardToShow.classList.remove('hidden');
+                cardToShow.querySelector('div').classList.add('shadow-[0px_7px_29px_0px_#6064FF]');
+                setTimeout(() => {
+                    cardToShow.classList.remove('opacity-0');
+                }, 50);
+            }
+        }
+
+        // Event listeners para os ícones
+        document.querySelectorAll('[data-card]').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                showCard(icon.dataset.card);
+            });
+        });
+
+        // Mostrar o card de código por padrão quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            showCard('code');
+        });
+    </script>
+</body>
+</html>
